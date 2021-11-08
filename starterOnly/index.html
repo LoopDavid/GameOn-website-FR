@@ -78,11 +78,14 @@
             </div>
             <div class="formData">
               <label>À combien de tournois GameOn avez-vous déjà participé ?</label><br>
-              <input type="number" class="text-control" id="quantity" name="quantity" min="0" max="99" pattern="[0-9]">
-              div.
+              <input type="number" class="text-control" id="quantity" name="quantity" pattern="[0-9]">
+              <div class="error" id="quantity-error-msg">
+              </div>
             </div>
             <p class="text-label">Quelles villes ?</p>
-            <div class="formData">
+            <div class="formData" id="loc">
+              <div class="error" id="loc-error-msg">
+              </div>
               <input class="checkbox-input" type="radio" id="location1" name="location" value="New York" />
               <label class="checkbox-label" for="location1">
                 <span class="checkbox-icon"></span>

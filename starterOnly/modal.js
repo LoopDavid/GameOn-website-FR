@@ -22,7 +22,17 @@ const emailFormat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 const birthdateFormat = /^\d{2}-\d{2}-\d{4}$/;
 const birthdate = document.getElementById('birthdate');
 const birthdateError = document.getElementById('birthdate-msg-error');
-
+const quantity = document.getElementById('quantity');
+const quantityError = document.getElementById('quantity-error-msg');
+const loc = document.getElementById('loc').checked;
+const locError = document.getElementById('loc-error-msg');
+// const loc1 = document.getElementById('location1');
+// const loc2 = document.getElementById('location2');
+// const loc3 = document.getElementById('location3');
+// const loc4 = document.getElementById('location4');
+// const loc5 = document.getElementById('location5');
+// const loc6 = document.getElementById('location6');
+const locFormat = /^[0-9]$/;
 
 // launch modal event
 modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
@@ -54,18 +64,26 @@ if (prenom.value.length <= 2) {
     nom.style.border = "2px solid green";
   }
   if (email.value.match(emailFormat)) {
+    email.style.border = "2px solid green";
     return true;
   } else {
     emailError.innerHTML="Veuillez entrer une adresse mail valide !";
     email.style.border = "2px solid red";
     console.log('email invalid');
   }
-  // if (birthdate.value.match(birdthdateFormat)) {
-  //   return true;
-  // } else {
-  //   birthdateError.innerHTML="Veuillez une date au format suivant jj/mm/aaaa";
-  //   birthdate.style.border ="2px solid red";
-  // }
+  if (birthdate.value.match(birthdateFormat)) {
+    birthdate.style.border="2px solid green";
+    return true;
+  } else {
+    birthdateError.innerHTML="Champ obligatoire !";
+    birthdate.style.border ="2px solid red";
+  }
+  if (quantity.value >= 0 || quantity.value <= 99 || loc.value.match(locFormat)) {
+    return true;
+  } else {
+    quantityError.innerHTML ="Veuillez composer des chiffre de 0 à 9 et entre 0 et 99.";
+    quantity.style.border ="2px solid red";
+  }
 });
 
 // close modal

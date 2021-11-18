@@ -63,7 +63,6 @@
               <label>Nom</label><br>
               <input class="text-control" type="text" id="nom" name="last"/><br>
               <div class="error" id="nom-error-msg">
-
               </div>
             </div>
             <div class="formData">
@@ -75,15 +74,16 @@
               <label>Date de naissance</label><br>
               <input class="text-control" type="date" id="birthdate" name="birthdate" /><br>
               <div class="error" id="birthdate-error-msg">
+              </div>
             </div>
             <div class="formData">
               <label>À combien de tournois GameOn avez-vous déjà participé ?</label><br>
-              <input type="number" class="text-control" id="quantity" name="quantity" pattern="[0-9]">
+              <input type="number" class="text-control" id="quantity" name="quantity" >
               <div class="error" id="quantity-error-msg">
               </div>
             </div>
             <p class="text-label">Quelles villes ?</p>
-            <div class="formData" id="loc">
+            <div class="formData" id="locaction">
               <div class="error" id="loc-error-msg">
               </div>
               <input class="checkbox-input" type="radio" id="location1" name="location" value="New York" />
@@ -113,11 +113,13 @@
             </div>
 
             <div class="formData">
-              <input class="checkbox-input" type="checkbox" id="checkbox1" checked required />
-              <label class="checkbox2-label" for="checkbox1" required="required">
+              <input class="checkbox-input" type="checkbox" id="checkbox1" />
+              <label class="checkbox2-label" for="checkbox1" id="rgpd">
                 <span class="checkbox-icon"></span>
                 J'ai lu et accepté les conditions d'utilisation.
               </label>
+              <div class="error" id="rgpd-error-msg">
+              </div>
               <br>
               <input class="checkbox-input" type="checkbox" id="checkbox2" />
               <label class="checkbox2-label" for="checkbox2">

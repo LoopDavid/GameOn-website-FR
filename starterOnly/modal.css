@@ -529,6 +529,7 @@ footer {
 /* CSS ERROR modal */
 
 .error {
+<<<<<<< HEAD
   display: flex;
   justify-content: center;
   font-size: 13px;
@@ -550,3 +551,8 @@ footer {
   font-size: 2rem;
   color: greenyellow;
 }
+=======
+  font-size: 13px;
+  color: red;
+}
+>>>>>>> 131a189cce9923a220939bcbcede616761138c25

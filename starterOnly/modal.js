@@ -21,6 +21,7 @@ const emailError = document.getElementById('email-error-msg');
 const emailFormat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 const birthdateFormat = /^\d{2}-\d{2}-\d{4}$/;
 const birthdate = document.getElementById('birthdate');
+<<<<<<< HEAD
 const birthdateError = document.getElementById('birthdate-error-msg');
 const quantity = document.getElementById('quantity');
 const quantityError = document.getElementById('quantity-error-msg');
@@ -31,6 +32,10 @@ const rgpd = document.getElementById('checkbox1');
 const rgpdError = document.getElementById('rgpd-error-msg');
 let rgpdCheck = false;
 const sendMsg = document.getElementById('send-msg');
+=======
+const birthdateError = document.getElementById('birthdate-msg-error');
+
+>>>>>>> 131a189cce9923a220939bcbcede616761138c25
 
 // launch modal event
 modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
@@ -45,6 +50,7 @@ function launchModal() {
 // stop to close modal in submit modalBtn
 document.getElementById('myForm').addEventListener('submit', function(e) {
 e.preventDefault();
+<<<<<<< HEAD
   if (prenom.value.length >= 2) {
     prenomError.innerHTML="";
     prenom.style.border = "2px solid green";
@@ -124,4 +130,42 @@ close.addEventListener('click', () => {
   formElement.style.display='block';
   sendMsg.style.display='none';
   formElement.reset();
+=======
+if (prenom.value.length <= 2) {
+  prenomError.innerHTML="Veuillez mettre 3 caractères minimun";
+  prenom.style.border = "2px solid red";
+  return;
+  } else {
+    prenomError.innerHTML="";
+    prenom.style.border = "2px solid green";
+
+  }
+  if (nom.value.length <= 2) {
+    nomError.innerHTML="Veuillez entrer 3 caractères au minimun !";
+    nom.style.border = "2px solid red";
+    return;
+  } else {
+    nomError.innerHTML="";
+    nom.style.border = "2px solid green";
+  }
+  if (email.value.match(emailFormat)) {
+    return true;
+  } else {
+    emailError.innerHTML="Veuillez entrer une adresse mail valide !";
+    email.style.border = "2px solid red";
+    console.log('email invalid');
+  }
+  // if (birthdate.value.match(birdthdateFormat)) {
+  //   return true;
+  // } else {
+  //   birthdateError.innerHTML="Veuillez une date au format suivant jj/mm/aaaa";
+  //   birthdate.style.border ="2px solid red";
+  // }
+});
+
+// close modal
+
+close.addEventListener('click', () => {
+  modalbg.style.display = "none";
+>>>>>>> 131a189cce9923a220939bcbcede616761138c25
 });

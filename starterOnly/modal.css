@@ -180,11 +180,14 @@ main {
   position: relative;
   color: #fff;
   padding-top: 10px;
+  
 }
 
 .modal-body {
   padding: 15px 8%;
   margin: 15px auto;
+  justify-content: center;
+  align-content: center;
 }
 
 label {
@@ -529,7 +532,6 @@ footer {
 /* CSS ERROR modal */
 
 .error {
-<<<<<<< HEAD
   display: flex;
   justify-content: center;
   font-size: 13px;
@@ -537,22 +539,8 @@ footer {
   color: red;
 }
 
-
-#send-msg {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 150px;
-  width: 300px;
-  background-color: grey;
-}
-
-#send-validate {
-  font-size: 2rem;
+.msg-sending {
+  font-size: 1rem;
   color: greenyellow;
+
 }
-=======
-  font-size: 13px;
-  color: red;
-}
->>>>>>> 131a189cce9923a220939bcbcede616761138c25

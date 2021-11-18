@@ -51,7 +51,7 @@
       <div class="content">
         <span class="close"></span>
         <div class="modal-body">
-          <form  id="myForm" name="reserve" action="index.html" method="GET" onsubmit="return validate();">
+          <form  id="myForm" name="reserve" action="index.html" method="GET">
             <div class="formData">
               <label>Prénom</label><br>
               <input class="text-control" type="text" id="prenom" name="first" /><br>
@@ -61,7 +61,7 @@
 
             <div class="formData">
               <label>Nom</label><br>
-              <input class="text-control" type="text" id="nom" name="last"/><br>
+              <input class="text-control" type="text" id="nom" name="last" /><br>
               <div class="error" id="nom-error-msg">
               </div>
             </div>
@@ -128,14 +128,18 @@
               </label>
               <br>
             </div>
-            <input class="btn-submit" type="submit" class="button" value="C'est parti" />
+            <input class="btn-submit" type="submit" class="button" value="C'est parti" id="submit-btn" />
             <div class="error">
             </div>
           </form>
-
+          <div id="send-msg">
+            test
+            <div id="send-validate"></div>
+          </div>
         </div>
       </div>
     </div>
+    
   </main>
   <footer>
     <p class="copyrights">

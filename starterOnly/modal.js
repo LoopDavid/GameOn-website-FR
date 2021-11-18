@@ -8,7 +8,7 @@ function editNav() {
 }
 
 // DOM Elements
-const modalbg = document.querySelector(".bground");
+const modalbg = document.querySelector(".bground");    
 const modalBtn = document.querySelectorAll(".modal-btn");
 const formData = document.querySelectorAll(".formData");
 const close = document.querySelector('.close');
@@ -27,9 +27,10 @@ const quantityError = document.getElementById('quantity-error-msg');
 const loc = document.querySelectorAll('input[name="location"]');
 const locError = document.getElementById('loc-error-msg');
 let locCheck = false;
-const rgpd = document.getElementById('rgpd');
+const rgpd = document.getElementById('checkbox1');
 const rgpdError = document.getElementById('rgpd-error-msg');
 let rgpdCheck = false;
+const sendMsg = document.getElementById('send-msg');
 
 // launch modal event
 modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
@@ -37,6 +38,7 @@ modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
 // launch modal form
 function launchModal() {
   modalbg.style.display = "block";
+  sendMsg.style.display ="none";
 }
 
 
@@ -49,6 +51,7 @@ e.preventDefault();
   } else {
     prenomError.innerHTML="Veuillez mettre 2 caractères minimun";
     prenom.style.border = "2px solid red";
+    return;
   }
 
   if (nom.value.length >= 2) {
@@ -57,6 +60,7 @@ e.preventDefault();
   } else {
     nomError.innerHTML="Veuillez entrer 2 caractères au minimun !";
     nom.style.border = "2px solid red";
+    return;
     
   }
 
@@ -66,7 +70,7 @@ e.preventDefault();
   } else {
     emailError.innerHTML="Veuillez entrer une adresse mail valide !";
     email.style.border = "2px solid red";
-    console.log('email invalid');
+    return;
   }
 
   if (birthdate.value.length > 0) {
@@ -75,6 +79,7 @@ e.preventDefault();
   } else {
     birthdateError.innerHTML="Veuillez une date au format suivant jj/mm/aaaa";
     birthdate.style.border ="2px solid red";
+    return;
   }
   
   if (quantity.value.length >= 1 && quantity.value >= 0 && quantity.value <= 99) {
@@ -83,6 +88,7 @@ e.preventDefault();
   } else {
     quantityError.innerHTML="Veuillez entrer un nombre entre 0 et 99 !";
     quantity.style.border ="2px solid red";
+    return;
   }
   
   for (let i = 0; i < loc.length; i++) {
@@ -92,27 +98,30 @@ e.preventDefault();
     locError.innerHTML="";
   } else {
     locError.innerHTML="Vous devez choisir une option.";
+    return;
   }
-  
-  for (let i = 0; i < rgpd.length; i++) {
-    locCheck = (rgpd[i].checked || rgpdCheck) ;
-    }
-    if (locCheck) {
-      rgpdError.innerHTML="";
-    } else {
-      rgpdError.innerHTML="Vous devez vérifier que vous acceptez les termes et conditions.";
-    }
+  console.log(rgpd.checked);
+
+
+
+
+  formElement.style.display='none';
+  sendMsg.style.display='block';
+  formElement.reset();
 });
-// Validate Form 
 
 
-function validate() {
+const submitBtnElement = document.getElementById('submit-btn');
+const formElement = document.getElementById('myForm');
 
-};
-
-
+submitBtnElement.addEventListener('click', () => {
+  
+});
 
 // close modal
 close.addEventListener('click', () => {
   modalbg.style.display = "none";
+  formElement.style.display='block';
+  sendMsg.style.display='none';
+  formElement.reset();
 });

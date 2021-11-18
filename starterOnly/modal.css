@@ -535,3 +535,18 @@ footer {
   margin-left: 1rem;
   color: red;
 }
+
+
+#send-msg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 150px;
+  width: 300px;
+  background-color: grey;
+}
+
+#send-validate {
+  font-size: 2rem;
+  color: greenyellow;
+}

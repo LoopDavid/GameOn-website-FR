@@ -104,7 +104,7 @@ e.preventDefault();
   if (rgpd.checked == true) {
     rgpdError.innerHTML="";
   } else {
-    rgpdError.innerHTML="false";
+    rgpdError.innerHTML="Veuillez accepter les politiques de confidentialitées.";
     return;
   } 
     

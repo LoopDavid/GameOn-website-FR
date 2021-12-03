@@ -27,10 +27,12 @@ const quantityError = document.getElementById('quantity-error-msg');
 const loc = document.querySelectorAll('input[name="location"]');
 const locError = document.getElementById('loc-error-msg');
 let locCheck = false;
-const rgpd = document.getElementById('checkbox1');
+const rgpd = document.getElementById('rgpd');
 const rgpdError = document.getElementById('rgpd-error-msg');
 const sendMsg = document.getElementById('send-msg');
 const content = document.getElementsByClassName('content');
+const submitBtnElement = document.getElementById('submit-btn');
+const formElement = document.getElementById('myForm');
 
 // launch modal event
 modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
@@ -39,13 +41,29 @@ modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
 function launchModal() {
   modalbg.style.display = "block";
   sendMsg.style.display ="none";
+ 
+};
+
+function resetValidation() {
+  prenomError.innerHTML="";
+  prenom.style.border='none';
+  nomError.style.innerHTML='';
+  nom.style.border='none';
+  emailError.innerHTML='';
+  email.style.border='none';
+  birthdateError.innerHTML='';
+  birthdate.style.border='none';
+  quantityError.innerHTML='';
+  quantity.style.border='none';
+  locError.innerHTML='';
+  rgpdError.innerHTML='';
 }
 
 
 // stop to close modal in submit modalBtn
 document.getElementById('myForm').addEventListener('submit', function(e) {
 e.preventDefault();
-  if (prenom.value.length >= 2) {
+  if (prenom.value.trim().length >= 2 ) {
     prenomError.innerHTML="";
     prenom.style.border = "2px solid green";
   } else {
@@ -54,7 +72,7 @@ e.preventDefault();
     return;
   }
 
-  if (nom.value.length >= 2) {
+  if (nom.value.trim().length >= 2) {
     nomError.innerHTML="";
     nom.style.border = "2px solid green";
   } else {
@@ -107,18 +125,14 @@ e.preventDefault();
     rgpdError.innerHTML="Veuillez accepter les politiques de confidentialitées.";
     return;
   } 
-    
+  // reset form and launch sending message
   formElement.style.display='none';
   sendMsg.style.display='block';
   formElement.reset();
 });
 
-
-const submitBtnElement = document.getElementById('submit-btn');
-const formElement = document.getElementById('myForm');
-
-submitBtnElement.addEventListener('click', () => {
-});
+// launch event submit btn
+submitBtnElement.addEventListener('click', () => {});
 
 // close modal
 close.addEventListener('click', () => {
@@ -126,4 +140,5 @@ close.addEventListener('click', () => {
   formElement.style.display='block';
   sendMsg.style.display='none';
   formElement.reset();
+  resetValidation();
 });

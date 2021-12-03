@@ -88,6 +88,7 @@ img {
     display: block;
     text-align: left;
   }
+  
 }
 
 
@@ -98,6 +99,7 @@ img {
     float: right;
     display: block;
   }
+ 
 }
 
 main {
@@ -423,6 +425,7 @@ input[data-error]::after {
   position: relative;
   text-align: left;
   min-width: 424px;
+  word-wrap: break-word;
 }
 .hero-content::after {
   content: "";
@@ -443,7 +446,7 @@ input[data-error]::after {
   white-space: nowrap;
 }
 .hero-text {
-  width: 146%;
+  width: 100%;
   font-weight: normal;
   margin-top: 57px;
   padding: 0;
@@ -497,12 +500,16 @@ footer {
     display: none;
   }
   .hero-headline {
-    font-size: 4.5rem;
+    margin-left: -15px;
+    padding-right: 85px;
+    font-size: 40px;
     white-space: normal;
   }
   .hero-text {
-    width: unset;
+    width: 80%;
     font-size: 1.5rem;
+    padding-right: 50px;
+
   }
   .hero-img img {
     border-radius: 10px;
